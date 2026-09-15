@@ -2,7 +2,7 @@
 
 Public Codex plugin marketplace for the user's private `mcp-selfhost` runtime.
 
-The repository publishes plugin metadata only. It contains no credentials and does not expose the user's computer. The runtime endpoint remains local:
+The repository publishes plugin metadata plus the credential-free v0.2 facade source for auditability. It contains no credentials and does not expose the user's computer. The active local endpoint remains:
 
 `http://127.0.0.1:18080/mcp`
 
@@ -27,10 +27,12 @@ Desktop Commander tools are exposed only with a `selfhost_` prefix, for example 
 - `plugins/mcp-selfhost/.mcp.json` — local MCP endpoint
 - `plugins/mcp-selfhost/skills/mcp-selfhost/SKILL.md` — identity-first operating instructions
 - `plugins/mcp-selfhost/scripts/check-local.ps1` — local identity/health check
+- `runtime/selfhost-wrapper.cjs` — credential-free v0.2 MCP facade source
+- `runtime/package.json` — reproducible runtime dependencies
 
 ## Security
 
-The MCP endpoint is loopback-only for local clients. The separate self-hosted VPS transport uses a private reverse SSH tunnel and is not configured in this public repository.
+The MCP endpoint is loopback-only for local clients. A separate private reverse SSH tunnel can reach the WSL-adapter listener; no server address, key, token, or credential is stored in this public repository.
 
 Do not expose port 18080 or 18081 directly to the public Internet.
 
