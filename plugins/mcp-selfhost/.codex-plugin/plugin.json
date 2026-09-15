@@ -1,7 +1,7 @@
 {
   "name": "mcp-selfhost",
-  "version": "0.1.0",
-  "description": "Private local Desktop Commander MCP plugin for Windows development workflows.",
+  "version": "0.2.0",
+  "description": "Private self-hosted Desktop Commander MCP with verifiable identity and namespaced tools.",
   "author": {
     "name": "pipijun666"
   },
@@ -9,15 +9,15 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "MCP Selfhost",
-    "shortDescription": "Use a private local Desktop Commander MCP from Codex.",
-    "longDescription": "Connects Codex to a self-hosted Desktop Commander bridge on the local PC without using the hosted Remote Desktop Commander relay.",
+    "shortDescription": "Use the verified private self-hosted MCP path.",
+    "longDescription": "Connects to the local MCP Selfhost facade, verifies SELFHOST_E2E_OK, and exposes Desktop Commander tools with a selfhost_ prefix so calls cannot be confused with the hosted Remote Desktop Commander connector.",
     "developerName": "pipijun666",
     "category": "DeveloperTools",
     "capabilities": ["Interactive", "Write"],
     "defaultPrompt": [
-      "Inspect my local development environment safely.",
-      "Run a command on my Windows machine and show the result.",
-      "Read or edit files in my local project workspace."
+      "Verify MCP Selfhost identity, then inspect my local development environment safely.",
+      "Use only selfhost_ tools for this task and show the identity marker first.",
+      "Check MCP Selfhost health and report the upstream tool count."
     ]
   }
 }
